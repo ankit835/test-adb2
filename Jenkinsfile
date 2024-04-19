@@ -14,7 +14,7 @@ agent { dockerfile true }
 //            echo "${DATABRICKS_HOST_MAIN}\n${DATABRICKS_TOKEN_MAIN}" | databricks configure --token --profile main
                     sh '''
                         
-                        'echo ${env.DATABRICKS_HOST_MAIN}\n${env.DATABRICKS_TOKEN_MAIN} | databricks configure --token'
+                        echo $DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN | databricks configure --token
                         
                     '''                
 
