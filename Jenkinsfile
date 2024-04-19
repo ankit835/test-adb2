@@ -11,10 +11,10 @@ agent { dockerfile true }
            when { branch 'main' }
 
             steps {  
-
+//            echo "${DATABRICKS_HOST_MAIN}\n${DATABRICKS_TOKEN_MAIN}" | databricks configure --token --profile main
                     sh '''
                         
-                        echo "${DATABRICKS_HOST_MAIN}\n${DATABRICKS_TOKEN_MAIN}" | databricks configure --token --profile main
+                        echo "${DATABRICKS_HOST_MAIN}\n${DATABRICKS_TOKEN_MAIN}' | databricks configure --token"
                         
                     '''                
 
