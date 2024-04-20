@@ -2,8 +2,6 @@ pipeline {
 agent { dockerfile true }
     environment{ 
             DATABRICKS_TOKEN_MAIN=credentials('token-adb')
-      		DATABRICKS_HOST_MAIN=https://adb-1851930191878659.19.azuredatabricks.net
-
             }
     
     stages { 
