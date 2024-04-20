@@ -17,7 +17,7 @@ agent any
                         
                     //  '''  
                         script {
-                    sh "configure_script/sc.sh"
+                         sh "configure_script/sc.sh"
                 }      
                 // DDL deployment
                      sh '''
