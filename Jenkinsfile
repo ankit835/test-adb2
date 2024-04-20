@@ -12,17 +12,17 @@ agent { dockerfile true }
 
             steps {  
 //            echo "${DATABRICKS_HOST_MAIN}\n${DATABRICKS_TOKEN_MAIN}" | databricks configure --token --profile main
-                    sh '''
+                    // sh '''
                         
-                        echo "$DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN" | databricks configure --token
+                    //     echo "$DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN" | databricks configure --token
                         
-                    '''                
+                    // '''                
 
                 // DDL deployment
                      sh '''
                          DDL_FOLDER=/Workspace/Shared/DDL
                          echo $DDL_FOLDER
-                         databricks workspace import_dir DDL $DDL_FOLDER --exclude-hidden-files --overwrite
+                         databricks workspace import_dir DDL $DDL_FOLDER --exclude-hidden-files --overwrite --token $DATABRICKS_TOKEN_MAIN --url $DATABRICKS_HOST_MAIN
                      '''
             }
         }
