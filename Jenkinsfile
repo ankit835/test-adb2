@@ -18,7 +18,7 @@ agent { dockerfile true }
                     //  '''  
                 sh '''
                     databricks configure --token << EOF
-                    $DATABRICKS_HOST_MAIN
+                    $env.DATABRICKS_HOST_MAIN
                     $DATABRICKS_TOKEN_MAIN
                     EOF
                  sh '''       
