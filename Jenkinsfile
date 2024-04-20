@@ -13,12 +13,17 @@ agent { dockerfile true }
                    // ADB_HOME="/var/lib/jenkins/.local/bin"    
             steps {  
 //            echo "${DATABRICKS_HOST_MAIN}\n${DATABRICKS_TOKEN_MAIN}" | databricks configure --token --profile main
-                    sh '''
+                    // sh '''
                         
-                         echo "$DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN" | databricks configure --token --profile DEV
+                    //      echo "$DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN" | databricks configure --token --profile DEV
                         
-                     '''                
-
+                    //  '''  
+                sh '''
+                    databricks configure --token << EOF
+                    $DATABRICKS_HOST_MAIN
+                    $DATABRICKS_TOKEN_MAIN
+                    EOF
+                 sh '''       
                 // DDL deployment
                      sh '''
                          DDL_FOLDER=/Workspace/Shared/DDL
