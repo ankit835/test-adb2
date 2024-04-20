@@ -11,5 +11,5 @@ RUN apt install python3-pip -y
 RUN apt install git -y
 RUN apt update -y
 
-RUN pip install databricks-cli
+RUN pip install databricks-cli==0.11.0
 
