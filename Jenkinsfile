@@ -16,12 +16,9 @@ agent { dockerfile true }
                     //      echo "$DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN" | databricks configure --token --profile DEV
                         
                     //  '''  
-                sh '''
-                    databricks configure --token << EOF
-                    $env.DATABRICKS_HOST_MAIN
-                    $DATABRICKS_TOKEN_MAIN
-                    EOF
-                 sh '''       
+                        script {
+                    sh "configure_script/sc.sh"
+                }      
                 // DDL deployment
                      sh '''
                          DDL_FOLDER=/Workspace/Shared/DDL
