@@ -16,9 +16,8 @@ agent any
                     //      echo "$DATABRICKS_HOST_MAIN\n$DATABRICKS_TOKEN_MAIN" | databricks configure --token --profile DEV
                         
                     //  '''  
-                        script {
-                         sh "configure_script/sc.sh"
-                }      
+                         sh "chmod +x -R ${env.WORKSPACE}"   
+                         sh "configure_script/sc.sh"     
                 // DDL deployment
                      sh '''
                          DDL_FOLDER=/Workspace/Shared/DDL
