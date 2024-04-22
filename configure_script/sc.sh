@@ -6,7 +6,7 @@ $databricksUrl
 $DATABRICKS_TOKEN_MAIN
 EOF
 
-databricks workspace list
+/var/lib/jenkins/.local/bin/databricks workspace list
 
 
 
